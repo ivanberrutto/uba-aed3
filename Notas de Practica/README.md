@@ -6,4 +6,4 @@ Practica 2: https://www.youtube.com/watch?v=NLj9z4SpBhc&feature=youtu.be&ab_chan
 
 Practica 3: https://www.youtube.com/watch?v=NwMLGhLwhkE&ab_channel=AEDIIIDC.UBA
 
-Practica 4: https://campus.exactas.uba.ar/mod/url/view.php?id=216829
+Practica 4: https://www.youtube.com/watch?v=lvIIcUw2o30&ab_channel=AEDIIIDC.UBA
