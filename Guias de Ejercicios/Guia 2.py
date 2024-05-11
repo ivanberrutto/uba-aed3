@@ -79,3 +79,11 @@ def PotenciaLogaritmica(a, b):
 # c = 2
 # f(n) = o1
 # por tm 2° complejidad: n**( log1 1 = 0 ) log n =  log n
+
+def PotenciaSum(A):
+    return potencia(A) if len(A) <= 4 else (PotenciaSum([row[:len(A[0])//2] for row in A[:len(A)//2]]) +
+                                            PotenciaSum([row[len(A[0])//2:] for row in A[:len(A)//2]]) +
+                                            PotenciaSum([row[:len(A[0])//2] for row in A[len(A)//2:]]) +
+                                            PotenciaSum([row[len(A[0])//2:] for row in A[len(A)//2:]]))
+
+# no se si esta bien
