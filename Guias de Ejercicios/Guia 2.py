@@ -80,10 +80,45 @@ def PotenciaLogaritmica(a, b):
 # f(n) = o1
 # por tm 2° complejidad: n**( log1 1 = 0 ) log n =  log n
 
+
+#Ejercicio 4:
+
+
+#Ejercicio 5:
+
 def PotenciaSum(A):
     return potencia(A) if len(A) <= 4 else (PotenciaSum([row[:len(A[0])//2] for row in A[:len(A)//2]]) +
                                             PotenciaSum([row[len(A[0])//2:] for row in A[:len(A)//2]]) +
                                             PotenciaSum([row[:len(A[0])//2] for row in A[len(A)//2:]]) +
                                             PotenciaSum([row[len(A[0])//2:] for row in A[len(A)//2:]]))
 
-# no se si esta bien
+# No es posible comprobar si esta bien
+
+#Ejercicio 6
+
+#...
+
+#Ejercicio 7
+
+def DesordenSort(A):
+	if len(A) <= 1:
+		return A
+	izq =  DesordenSort(A[:len(A)//2])
+	der = DesordenSort(A[len(A)//2:])
+	comb = MergeTurbio(izq,der)
+	return comb
+
+def MergeTurbio(izq,der):
+	s = []
+	i, j = 0, 0
+	while i < len(izq) and j < len(der):
+	    if izq[i] > der[j]:
+	        s.append(izq[i])
+	        i += 1
+	    else:
+	        s.append(der[j])
+	        j += 1
+
+	return s
+
+print(DesordenSort([2,4,3,6,8]))
