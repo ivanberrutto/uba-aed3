@@ -102,23 +102,31 @@ def PotenciaSum(A):
 
 def DesordenSort(A):
 	if len(A) <= 1:
-		return A
-	izq =  DesordenSort(A[:len(A)//2])
-	der = DesordenSort(A[len(A)//2:])
-	comb = MergeTurbio(izq,der)
-	return comb
+		return A,0
+	izq , contarizq =  DesordenSort(A[:len(A)//2])
+	der , contarder = DesordenSort(A[len(A)//2:])
+	resultado,contar = merge_y_contar(izq,der)
+	return resultado,contar
 
-def MergeTurbio(izq,der):
-	s = []
-	i, j = 0, 0
+def merge_y_contar(izq, der): 
+	resultado = [] 
+	i = 0
+	j = 0 
+	contar = 0
+	# Mientras haya elementos en ambos subarreglos
 	while i < len(izq) and j < len(der):
-	    if izq[i] > der[j]:
-	        s.append(izq[i])
+	    if izq[i] <= der[j]:
+	        resultado.append(izq[i])
 	        i += 1
 	    else:
-	        s.append(der[j])
+	        resultado.append(der[j])
+	        contar += len(izq) - i  # Todos los elementos restantes en izq están desordenados respecto a der[j]
 	        j += 1
 
-	return s
+	# Añadir los elementos restantes de cada subarreglo
+	resultado += izq[i:]
+	resultado += der[j:]
+
+	return resultado, contar
 
 print(DesordenSort([2,4,3,6,8]))
