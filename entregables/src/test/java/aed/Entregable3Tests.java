@@ -20,7 +20,7 @@ class Entregable3Tests {
     @Test
     void testEjemploEnunciado()  {
         // Lee el archivo de entrada
-        String actualOutput = probarEjercicio("entregable3ej.txt", entregable3.getClass());
+        String actualOutput = probarEjercicio("entregable3ej1.txt", entregable3.getClass());
 
         // Verificar si la salida coincide con el resultado esperado
         assertEquals("8", actualOutput);
