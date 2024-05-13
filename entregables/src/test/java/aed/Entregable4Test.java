@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static aed.TestFunciones.probarEjercicio;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Entregable4Tests {
+public class Entregable4Test {
     Entregable4 entregable4 = new Entregable4();
 
     @Test

@@ -1,12 +1,5 @@
 package aed;
 
-import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Locale;
-import java.util.Scanner;
-
 import static aed.TestFunciones.probarEjercicio;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
-class Entregable3Tests {
+class Entregable3Test {
     Entregable3 entregable3 = new Entregable3();
 
     @Test
