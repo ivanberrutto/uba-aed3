@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="aed" />
+        <module name="aed (2) (aed)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aed (1) (org.example)" target="22" />
       <module name="ejs" target="22" />
     </bytecodeTargetLevel>
   </component>
