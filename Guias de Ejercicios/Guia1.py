@@ -1,4 +1,4 @@
-
+#ejercicio 8
 def cortesEconomicos(i, j, memo = None):
     if memo is None:
         memo = [[None] * (j + 1) for _ in range(j + 1)]
@@ -25,3 +25,32 @@ def cortesEconomicos(i, j, memo = None):
 C = [4, 2, 7]
 
 print(cortesEconomicos(0, 10))
+
+#ejericcio 11:
+
+# f(i,r) =
+# true si i=n y r=w
+# false si i = n y r!=w 
+# f(i+1,r+v(i+1)) o f(i+1, r x v(i+1)) o f(i+1, r**vi+1) cc
+
+w = 100
+memo = [][]
+#memo:
+# fila suma
+# fila x
+# fila pote
+v = []
+
+def operacionesSeq(i,r ):
+
+
+	if(i == len(v)):
+		if (r==w):
+			return True
+		else:
+			return False
+	if r > w:
+		return False
+
+	return operacionesSeq(i+1,r+v[i+1] ) || operacionesSeq(i+1, r * v[i+1] ) || operacionesSeq(i+1, r ** v[i+1] )
+
