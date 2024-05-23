@@ -1,0 +1,64 @@
+3. Dada una matriz simétrica M de n × n números naturales y un número k, queremos encontrar
+un subconjunto I de {1, . . . , n} con |I| = k que maximice P
+i,j∈I Mij . Por ejemplo, si k = 3 y:
+M =
+
+
+0 10 10 1
+− 0 5 2
+− − 0 1
+− − − 0
+
+ ,
+entonces I = {1, 2, 3} es una solución óptima.
+
+
+a) Diseñar un algoritmo de backtracking para resolver el problema, indicando claramente cómo
+se codifica una solución candidata, cuáles soluciones son válidas y qué valor tienen, qué es
+una solución parcial y cómo se extiende cada solución parcial.
+
+
+
+mejorSub = []
+valorMejorSub = 0
+
+MaxiSubconjunto(M, k, s)
+    if s.length = k:
+        if calcularValor(s) > valorMejorSub:
+            valorMejorSub = calcularValor(s)
+            mejorSub = s
+        return
+    
+    for i = 0 to M[0].length - 1:
+        if i not in s:
+            MaxiSubconjunto(M, k, s.add(i))
+ return mejorSub
+
+
+#resu del chatbox de la catedra:
+global valorMejorSub 
+global mejorSub 
+def MaxiSubconjunto(M, k, s, valorActual): 
+if len(s) == k: 
+	if valorActual > valorMejorSub: 
+		valorMejorSub = valorActual
+		 mejorSub = s.copy() 
+	return
+
+for i in range(len(M)):
+	if i not in s:
+        		valorEstimado = calcularValorMaximoEstimado(M, s, len(M), k)
+        		if valorActual + valorEstimado > valorMejorSub:
+            			MaxiSubconjunto(M, k, s + [i], valorActual + calcularValor(s + [i]))
+
+el tema es como hacer el calcularValorMaximoEstimado D:
+
+
+
+b) Calcular la complejidad temporal y espacial del mismo.
+
+la complejidad al menos de mi primer intento es:
+n! / n-k
+con la poda de optimalidad ni idea
+
+c) Proponer una poda por optimalidad y mostrar que es correcta.
