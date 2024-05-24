@@ -10,9 +10,9 @@ public class Entregable5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         PrintWriter pw = new PrintWriter(System.out);
-        int botellas;
-        int work;
-        int n = scanner.nextInt();
+        long botellas;
+        long work;
+        long n = scanner.nextInt();
         while (n != 0) {
             botellas = 0;
             work = 0;
