@@ -13,6 +13,6 @@ class Entregable5Test {
         String actualOutput = probarEjercicio("entregable5ej1.txt", entregable5.getClass());
 
         // Verificar si la salida coincide con el resultado esperado
-        assertEquals("9\n9000", actualOutput);
+        assertEquals("9"+ System.lineSeparator() +"9000", actualOutput);
     }
 }
