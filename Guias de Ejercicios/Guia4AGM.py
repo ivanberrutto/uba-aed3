@@ -10,3 +10,5 @@
 # k es porque es calcular cuanto vale el costo de cada arista y n^2 porque hay que crear el grafo completo
 # sabemos que realizar prim va a costar debajo de la cota de O ( k * n ^ 2) , por lo tanto esa es mi complejidad.
 
+# Ejercicio 11 : no entendi
+
