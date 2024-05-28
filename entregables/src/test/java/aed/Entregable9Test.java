@@ -10,10 +10,34 @@ class Entregable9Test {
     @Test
     void testEjemploEnunciado1()  {
         // Lee el archivo de entrada
-        String actualOutput = probarEjercicio("entregable5ej1.txt", entregable9.getClass());
+        String actualOutput = probarEjercicio("entregable9ej1.txt", entregable9.getClass());
 
         // Verificar si la salida coincide con el resultado esperado
-        assertEquals("4", actualOutput);
+        assertEquals("16", actualOutput);
+    }
+    @Test
+    void testEjemploEnunciado2()  {
+        // Lee el archivo de entrada
+        String actualOutput = probarEjercicio("entregable9ej2.txt", entregable9.getClass());
+
+        // Verificar si la salida coincide con el resultado esperado
+        assertEquals("20", actualOutput);
+    }
+    @Test
+    void testEjemploEnunciado3()  {
+        // Lee el archivo de entrada
+        String actualOutput = probarEjercicio("entregable9ej3.txt", entregable9.getClass());
+
+        // Verificar si la salida coincide con el resultado esperado
+        assertEquals("26", actualOutput);
+    }
+    @Test
+    void testEjemploEnunciado4()  {
+        // Lee el archivo de entrada
+        String actualOutput = probarEjercicio("entregable9ej4.txt", entregable9.getClass());
+
+        // Verificar si la salida coincide con el resultado esperado
+        assertEquals("17", actualOutput);
     }
 
 }

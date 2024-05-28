@@ -32,13 +32,6 @@ public class Grafo_Pesado {
 
          */
     }
-
-    // Function for printing the whole graph
-    // Stream API has been used
-    // to easily access the HashMap elements
-    // This code may not work in versions
-    // prior to java 8
-
     void printGraph()
     {
         for (int i = 0; i < this.v; i++) {
@@ -55,21 +48,44 @@ public class Grafo_Pesado {
             }
         }
     }
-    // Main method
-    public static void main(String[] args)
-    {
-        /*
-        int v = 5;
-        Grafo_Pesado obj = new Grafo_Pesado(v);
-        obj.addEdge(0, 1, 10);
-        obj.addEdge(0, 4, 20);
-        obj.addEdge(1, 2, 30);
-        obj.addEdge(1, 3, 40);
-        obj.addEdge(1, 4, 50);
-        obj.addEdge(2, 3, 60);
-        obj.addEdge(3, 4, 70);
-        obj.printGraph();
 
-         */
+    int primMST(int startNode) {
+        int totalWeight = 0;
+
+        // Priority queue to store vertices
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(Map.Entry.comparingByValue());
+        boolean[] visited = new boolean[v];
+
+        // Start with the given node
+        pq.add(new AbstractMap.SimpleEntry<>(startNode, 0));
+
+        while (!pq.isEmpty()) {
+            Map.Entry<Integer, Integer> node = pq.poll();
+            int u = node.getKey();
+
+            // If this node is already processed, skip
+            if (visited[u])
+                continue;
+
+            // Mark the node as visited
+            visited[u] = true;
+
+            // Add weight to total weight
+            totalWeight += node.getValue();
+
+            // Visit all adjacent vertices
+            for (HashMap<Integer, Integer> neighbor : this.adj.get(u)) {
+                for (Map.Entry<Integer, Integer> edge : neighbor.entrySet()) {
+                    int v = edge.getKey();
+                    int weight = edge.getValue();
+                    if (!visited[v])
+                        pq.add(new AbstractMap.SimpleEntry<>(v, weight));
+                }
+            }
+        }
+
+        return totalWeight;
     }
+
+
 }
