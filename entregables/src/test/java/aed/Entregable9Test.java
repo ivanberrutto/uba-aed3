@@ -40,4 +40,13 @@ class Entregable9Test {
         assertEquals("17", actualOutput);
     }
 
+    @Test
+    void testEjemploEnunciado5()  {
+        // Lee el archivo de entrada
+        String actualOutput = probarEjercicio("entregable9ej5.txt", entregable9.getClass());
+
+        // Verificar si la salida coincide con el resultado esperado
+        assertEquals("16" + System.lineSeparator() + "20" + System.lineSeparator() + "26" + System.lineSeparator() + "17", actualOutput);
+    }
+
 }
