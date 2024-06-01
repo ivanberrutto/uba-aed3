@@ -63,7 +63,7 @@ public class Entregable9TodoJunto {
 
 class Grafo_Pesado2 {
     int v;
-    ArrayList<ArrayList<HashMap<Integer, Integer> >> adj;
+    ArrayList<ArrayList<HashMap<Integer, Integer> >> adj; // contiene en la posicion del vertice v un map de a quien esta conectado y el peso
     Grafo_Pesado2(int v)
     {
         this.v = v;
@@ -106,23 +106,23 @@ class Grafo_Pesado2 {
     int primMST(int startNode) {
         int totalWeight = 0;
 
-        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(Map.Entry.comparingByValue());
-        boolean[] visited = new boolean[v];
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(Map.Entry.comparingByValue()); // hago un heap que compara los valores del dicc
+        boolean[] visited = new boolean[v]; // Guardo los vertices ya visitados
 
-        pq.add(new AbstractMap.SimpleEntry<>(startNode, 0));
+        pq.add(new AbstractMap.SimpleEntry<>(startNode, 0)); // agrego el vertice con peso 0
 
         while (!pq.isEmpty()) {
             Map.Entry<Integer, Integer> node = pq.poll();
-            int u = node.getKey();
+            int u = node.getKey(); //consigo el vertice que estamos hablando
 
-            if (visited[u])
+            if (visited[u]) // si ya lo visite vamos al siguiente caso
                 continue;
 
             visited[u] = true;
 
             totalWeight += node.getValue();
 
-            for (HashMap<Integer, Integer> neighbor : this.adj.get(u)) {
+            for (HashMap<Integer, Integer> neighbor : this.adj.get(u)) {  // recorro todos los vecinos del vertice donde estoy parado
                 for (Map.Entry<Integer, Integer> edge : neighbor.entrySet()) {
                     int v = edge.getKey();
                     int weight = edge.getValue();

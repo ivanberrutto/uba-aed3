@@ -24,7 +24,6 @@ public class Entregable9 {
                 for(int j = 0 ; j < i ; j++){
                     int pesoArista = calcularPeso(numerosDeCadaPos.get(j),contra);
                     grafo.addEdge(i,j,pesoArista);
-                    grafo.addEdge(j,i,pesoArista);
                 }
             }
             int nodoInicial = 0;

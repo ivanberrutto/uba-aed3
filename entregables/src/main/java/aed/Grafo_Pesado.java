@@ -24,13 +24,12 @@ public class Grafo_Pesado {
         this.adj.get(u)
                 .get(this.adj.get(u).size() - 1)
                 .put(v, weight);
-        /*
         this.adj.get(v).add(new HashMap<>());
         this.adj.get(v)
                 .get(this.adj.get(v).size() - 1)
                 .put(u, weight);
 
-         */
+
     }
     void printGraph()
     {
