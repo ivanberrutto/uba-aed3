@@ -42,7 +42,7 @@ public class Entregable10 {
 
             // Diccionario que que segun pos de grafo me diga numero de piso
             // Diccionario que segun numero de piso me diga pos de grafo
-            // Diccionario que segun pos de grafo me diga de que ascensor es
+            // Diccionario que segun pos de grafo me diga de que ascensor es ( al final ni lo use )
             HashMap<Integer, Integer> posAPiso = new HashMap<Integer, Integer>();
             //ArrayList<HashMap<Integer, Integer>> pisoAPos = null;
             HashMap<Integer, ArrayList<Integer>> pisoAPos = new HashMap<Integer, ArrayList<Integer>>();
@@ -149,63 +149,4 @@ public class Entregable10 {
             return dist;
         }
     }
-    /*
-    static class Grafo_Pesado3 {
-        int v;
-        public ArrayList<ArrayList<Pair >> adj; // contiene en la posicion del vertice v un map de a quien esta conectado y el peso
-        Grafo_Pesado3(int v)
-        {
-            this.v = v;
-            this.adj = new ArrayList<>();
-
-            for (int i = 0; i < v; i++) {
-                this.adj.add(new ArrayList<>());
-            }
-        }
-        ArrayList<ArrayList<Pair>> vector(){
-            return adj;
-        }
-
-        // Function to add an Edge
-        void addEdge(int u, int v, int weight)
-        {
-            this.adj.get(u).add(new Pair(v, weight));
-
-            this.adj.get(v).add(new Pair(u, weight));
-        }
-
-        }
-    int[] dijkstra(int src) {
-        int[] dist = new int[v];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[src] = 0;
-
-        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.second - b.second);
-        pq.offer(new Pair(src, 0));
-
-        while (!pq.isEmpty()) {
-            int u = pq.poll().first;
-            for (Pair edge : adj.get(u)) {
-                int v = edge.first;
-                int weight = edge.second;
-                if (dist[u] != Integer.MAX_VALUE && dist[v] > dist[u] + weight) {
-                    dist[v] = dist[u] + weight;
-                    pq.offer(new Pair(v, dist[v]));
-                }
-            }
-        }
-        return dist;
-    }
-
-        static class Pair {
-            int vertex;
-            int weight;
-
-            Pair(int v, int w) {
-                vertex = v;
-                weight = w;
-            }
-        }
-
-     */
 }
